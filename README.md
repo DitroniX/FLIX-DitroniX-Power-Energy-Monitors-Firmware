@@ -6,7 +6,7 @@ This firmware has evolved over time and although originally was purely for bring
 
 This test code is OPEN SOURCE and formatted for easier viewing. It may be freely used, or modified as needed. You may use as is, use for bring-up development, simply use the bits you like! final use and for full IoT publishing. It is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-*To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 ATM90E36 Test Code), has been given a new name –* **FliX***.*
+To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 ATM90E36 Test Code), has been given a new name – **Flix**
 
 **Release Date**
 
