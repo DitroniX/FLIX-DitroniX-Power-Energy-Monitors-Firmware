@@ -8,6 +8,10 @@ This test code is OPEN SOURCE and formatted for easier viewing. It may be freely
 
 *To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 ATM90E36 Test Code), has been given a new name –* **FliX***.*
 
+**Release Date**
+
+The initial release of FliX is currently being finalised/tested and is expected to be available during August 2023.
+
 **Board Selection**
 
 With the family addition of the IPEC board and IPEX Expansion, the original firmware has moved away from just IPEM into an integrated development branch - with auto board detect. This will allow for future expansion and system integration.
