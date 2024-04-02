@@ -1,0 +1,128 @@
+Test Conditions.  Test 16th June 2023
+DitroniX Mains CT Bench Tester, with 3 x CT clamps on single phase to a Warmlite WL42005 Halogen Heater 1200W.
+Mains Voltage (~245V), to Greenbrook DAT01A transformer, with single 12V AC output to three Voltage inputs on IPEM (So we see correct readings over three phases).
+This is a production IPEM AT90E32 board, with no calibration or corrections applied - just default firmware values.
+Note: AC Voltage in, is a single AC supply with common to 1, 2 and 3 input.  Easy way, Short ATM to V1P (All three pads) and Link AC 1, 2 and 3.
+
+------------------------------------------------------------------------------------------------------------------------
+
+DitroniX IPEM-1 ATM90E32 ATM90E36 IoT Power Energy Monitor Board - Development Code
+
+Initialise OLED (If Plugged In)
+
+Register Status and Startup Report
+IPEM-1 ATM90E32 ATM90E36 IoT Power Energy Monitor
+ESP32 Serial ID: 5499FEEF49C0   Firmware Version: 230616
+Board Location: House
+
+Software Optons
+----------------
+Wi-Fi is Disabled
+Domoticz Publishing is Disabled
+MQTT Publishing is Disabled
+ThingSpeak Publishing is Disabled
+
+EEPROM Check: 20        (Validation OK)
+
+PWM Output is Disabled
+
+DAC Output is Disabled
+
+Peripherals Test
+-----------------
+Testing RGB LED
+Scanning I2C Bus for Devices ...
+ * I2C device found at address Decimal 60 = Hex 0x3C OLED
+ * I2C device found at address Decimal 80 = Hex 0x50 EEPROM
+ * I2C Bus Scan Complete
+
+AC/DC Voltage Input Detected
+Connecting to the ATM90E32
+ATM90E32 Connected - OK
+IPEM Hardware Setup and Power-Up Test - Board Initialized
+
+Register Status and Diagnostic Report
+IPEM-1 ATM90E32 ATM90E36 IoT Power Energy Monitor
+ESP32 Serial ID: 5499FEEF49C0   Firmware Version: 230616   Location: House
+
+Hardware Configuration for ATM90E32
+------------------------------------
+AC Voltage Inputs:      Single Input V1 will be used for Current Phase Calculations
+Split AC Voltage:       Dual Split-Phase (V1-x-V3) Disabled
+CT Current Clamps:      Configured for 1, 2, 3 Phase + 1 Phase (ESP32)
+CT4 Current Input:      Configured for ESP32 ADC
+
+[Status Values]
+System Status:          S0:0x37E                S1:0xFFFE
+Meter Status:           E0:0x20F                E1:0xFF
+
+Mains RMS Voltage
+------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - -  
+Voltage 1: 245.74 V (Single Line Voltage Selected)     
+
+Calculated RMS Power
+---------------------
+Power V1*I1: 1204.13 W
+Power V1*I2: 1189.38 W
+Power V1*I3: 1194.30 W
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Power: 3582.81 W (CT1~CT2~CT3)
+
+Active Power (Absorbed or Used by the Load)
+--------------------------------------------
+Active Power CT1: -1197.98 W    (Export)
+Active Power CT2: -1180.80 W    (Export)
+Active Power CT3: -1187.90 W    (Export)
+- - - - - - - - - - - - - - - - - - - - - -
+Total Active Power: -2385.93 W  (Export)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Active Power: -3566.68 W (CT1~CT2~CT3)
+
+Re-Active Power
+----------------
+ReActive Power CT1: -72.75 VAR
+ReActive Power CT2: -68.51 VAR
+ReActive Power CT3: -70.68 VAR
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Total ReActive Power: -143.49 VAR (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Reactive Power: -211.94 W (CT1~CT2~CT3)
+
+Apparent Power (Total Amount of Power Flowing from Source to Load)
+-------------------------------------------------------------------
+Apparent Power CT1: 1201.35 VA
+Apparent Power CT2: 1183.88 VA
+Apparent Power CT3: 1191.30 VA
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Total Apparent Power: 2392.42 VA (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Apparent Power: 3576.53 W (CT1~CT2~CT3)
+
+Other Power Information
+------------------------
+Total Fundamental Power: -2382.89 pH(t)
+
+Total Harmonic Power: -3.70
+
+Power Factor
+-------------
+Power Factor CT1: 0.00 PF
+Power Factor CT2: 0.00 PF
+Power Factor CT3: 0.00 PF
+- - - - - - - - - - - - - - -
+Total Power Factor: 0.00 PF
+
+Phase Angle
+------------
+Phase Angle CT1: 0.00
+Phase Angle CT2: 0.00
+Phase Angle CT3: 0.00
+
+Other Information
+------------------
+Chip Temperature: 32.00 °C
+
+Mains Frequency: 50.05 Hz
+
+PCB Temperature Sensor (NTC_IN VN):     31.11 ºC
