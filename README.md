@@ -8,9 +8,17 @@ This test code is OPEN SOURCE and formatted for easier viewing. It may be freely
 
 To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 ATM90E36 Test Code), has been given a new name – **Flix**
 
-**Release Date**
+## **Versions**
 
-The initial release of FliX is currently being finalised/tested and is expected to be available during August 2023.
+ - 231129 - Beta Release Primarily for the ATM09E32 with basic ATM90E36 support.
+ - 250111 - Main  Release.  
+	 -  Supports ATM90E32
+	 -  Supports ATM90E36
+	 -  Major housekeeping
+	 -  Register and function updates for ATM90E36
+	 -  Various Bug fixes
+	 -  Japan Voltage Support
+	 -  Voltage and Current Harmonics
 
 **Board Selection**
 

@@ -1,0 +1,73 @@
+Example Output from DAC_CalibrateSlowRamp
+=======
+
+Inter Step Delay in ms (Default 50 = 50 Milliseconds)
+Inter Step Voltage Change in Volts (Default 0.1 V = 100 mV)
+
+DAC Output ALL          0.100 V         # 124   0 %
+DAC Output ALL          0.200 V         # 248   0 %
+DAC Output ALL          0.300 V         # 372   0 %
+DAC Output ALL          0.400 V         # 496   0 %
+DAC Output ALL          0.500 V         # 620   0 %
+DAC Output ALL          0.600 V         # 744   0 %
+DAC Output ALL          0.700 V         # 868   0 %
+DAC Output ALL          0.800 V         # 992   0 %
+DAC Output ALL          0.900 V         # 1116  0 %
+DAC Output ALL          1.000 V         # 1240  33 %
+DAC Output ALL          1.100 V         # 1365  33 %
+DAC Output ALL          1.200 V         # 1489  33 %
+DAC Output ALL          1.300 V         # 1613  33 %
+DAC Output ALL          1.400 V         # 1737  33 %
+DAC Output ALL          1.500 V         # 1861  33 %
+DAC Output ALL          1.600 V         # 1985  33 %
+DAC Output ALL          1.700 V         # 2109  33 %
+DAC Output ALL          1.800 V         # 2233  33 %
+DAC Output ALL          1.900 V         # 2357  33 %
+DAC Output ALL          2.000 V         # 2481  66 %
+DAC Output ALL          2.100 V         # 2605  66 %
+DAC Output ALL          2.200 V         # 2730  66 %
+DAC Output ALL          2.300 V         # 2854  66 %
+DAC Output ALL          2.400 V         # 2978  66 %
+DAC Output ALL          2.500 V         # 3102  66 %
+DAC Output ALL          2.600 V         # 3226  66 %
+DAC Output ALL          2.700 V         # 3350  66 %
+DAC Output ALL          2.800 V         # 3474  66 %
+DAC Output ALL          2.900 V         # 3598  66 %
+DAC Output ALL          3.000 V         # 3722  66 %
+DAC Output ALL          3.100 V         # 3846  100 %
+DAC Output ALL          3.200 V         # 3970  100 %
+DAC Output ALL          3.300 V         # 4094  100 %
+DAC Output ALL          3.300 V         # 4094  100 %
+DAC Output ALL          3.200 V         # 3970  100 %
+DAC Output ALL          3.100 V         # 3846  100 %
+DAC Output ALL          3.000 V         # 3722  100 %
+DAC Output ALL          2.900 V         # 3598  66 %
+DAC Output ALL          2.800 V         # 3474  66 %
+DAC Output ALL          2.700 V         # 3350  66 %
+DAC Output ALL          2.600 V         # 3226  66 %
+DAC Output ALL          2.500 V         # 3102  66 %
+DAC Output ALL          2.400 V         # 2978  66 %
+DAC Output ALL          2.300 V         # 2854  66 %
+DAC Output ALL          2.200 V         # 2730  66 %
+DAC Output ALL          2.100 V         # 2605  66 %
+DAC Output ALL          2.000 V         # 2481  66 %
+DAC Output ALL          1.900 V         # 2357  33 %
+DAC Output ALL          1.800 V         # 2233  33 %
+DAC Output ALL          1.700 V         # 2109  33 %
+DAC Output ALL          1.600 V         # 1985  33 %
+DAC Output ALL          1.500 V         # 1861  33 %
+DAC Output ALL          1.400 V         # 1737  33 %
+DAC Output ALL          1.300 V         # 1613  33 %
+DAC Output ALL          1.200 V         # 1489  33 %
+DAC Output ALL          1.100 V         # 1365  33 %
+DAC Output ALL          1.000 V         # 1240  33 %
+DAC Output ALL          0.900 V         # 1116  0 %
+DAC Output ALL          0.800 V         # 992   0 %
+DAC Output ALL          0.700 V         # 868   0 %
+DAC Output ALL          0.600 V         # 744   0 %
+DAC Output ALL          0.500 V         # 620   0 %
+DAC Output ALL          0.400 V         # 496   0 %
+DAC Output ALL          0.300 V         # 372   0 %
+DAC Output ALL          0.200 V         # 248   0 %
+DAC Output ALL          0.100 V         # 124   0 %
+DAC Output ALL          0.000 V         # 0     0 %

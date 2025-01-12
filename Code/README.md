@@ -13,7 +13,6 @@ Note: In the default state, upon first power up and during reset, the Green LED 
 
 This test code is OPEN SOURCE and formatted for easier viewing. It may be freely used, or modified as needed. You may use as is, use for bring-up development, simply use the bits you like! final use and for full IoT publishing. It is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-
 ## **Further Information**
 
 Additional information, and other technical details on this project, maybe found in the related repository pages.

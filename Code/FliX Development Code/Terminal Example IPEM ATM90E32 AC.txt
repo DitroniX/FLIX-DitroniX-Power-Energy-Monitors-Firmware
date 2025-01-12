@@ -1,0 +1,167 @@
+Std Prod PCA Bring Up.  Jumpers set.  AC In with Resistive Loads.
+------------------------------------------------------------------------------------------------------------------------
+
+Settings. Default
+
+// **************** DEFINE Device ATM90E32 or ATM90E36 ****************
+#define ATM90E32_DEVICE 32
+#define ATM90E36_DEVICE 36
+
+// On IPEM, Set required ATM90E3x device, ATM90E32_DEVICE or ATM90E36_DEVICE
+#define ATM90DEVICE ATM90E32_DEVICE
+
+// **************** DEFINE Current Clamp Input CT4 ****************
+#define CT4_ATM 90 // ATM90E36 (N)
+#define CT4_ESP 32 // ESP32 ADC.  Suitable for both ATM90E32 or ATM90E36
+
+// CT4 Software Configuration.  Can be used for CT INPUT to ATM90E36, ESP32 GP35.
+#define CT4_CONFIG CT4_ESP // On IPEM, Set CT4 ADC Configuration.  CT4_ATM or CT4_ESP
+#define CT4_ENABLED false  // CT4 ESP32 Clamp (Default false)
+
+// **************** DEFINE VOLTAGE REFERENCE ****************
+#define ATM_SINGLEVOLTAGE false // Set to true to use V1/ATM_V1P for VoltageGain1, VoltageGain2, VoltageGain3 and Calcfulations for CT1, CT2, CT3, CT4, CTN.  (Default true)
+
+------------------------------------------------------------------------------------------------------------------------
+
+FliX - Integrated Firmware for DitroniX Power Energy Monitor SDK Boards       
+
+Scanning and Configuring Board.. Please Wait..
+
+Hardware Options and Auto Configuration
+────────────────────────────────────────
+Scanning I2C Bus for Devices for Auto Configuration ...
+ I2C Possible Device(s) found at Address:
+ * Hex 0x3C (60)         OLED
+ * Hex 0x50 (80)         EEPROM
+ I2C Bus Scan Complete
+
+IPEM ESP32 ATM90E32 ATM90E36 IoT Power Energy Monitor
+
+IPEM Register Status and Startup Report
+ESP32 Serial ID: 60DDA9F7A608
+FliX Firmware Version: 250112
+Board Location: House
+
+EEPROM Check: 20        (Validation OK)
+
+PWM (ESP32) Output is Disabled
+
+
+Initialising OLED Display
+Testing RGB LED
+
+Wi-Fi Options
+──────────────
+Wi-Fi is Disabled
+MQTT Publishing is Disabled
+Domoticz Publishing is Disabled
+Zabbix Publishing Disabled
+
+Software Options
+─────────────────
+ADC Raw: 2581 > ADC Adjusted: 2581 > Calculated: 24.58 V
+
+
+AC > DC Voltage Input Detected. ATM90 Powered
+
+Connecting to the ATM90E32
+ATM90E32 Connected - OK
+
+IPEM Hardware Setup and Power-Up Test - Board Initialized
+
+Register Status and Diagnostic Report
+ESP32 Serial ID: 60DDA9F7A608
+Firmware Version: 250112
+Location: House
+
+Hardware Configuration for ATM90E32
+────────────────────────────────────
+AC Voltage Inputs:      Single Input V1 will be used for Current Phase Calculations
+Split AC Voltage:       Disabled
+CT Current Clamps:      Configured for 1, 2 or 3 Phase
+CT4 Current Input:      Configured for ESP32 ADC
+
+[Status Values]
+System Status:          S0:0x370                S1:0xFF00
+Meter Status:           E0:0x300                E1:0x0
+
+Mains RMS Voltage
+──────────────────
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+Voltage 1: 238.92 V (Single Line Voltage Selected)
+
+Mains RMS Current
+──────────────────
+Current CT1: 1.25 A
+Current CT2: 1.25 A
+Current CT3: 1.26 A
+- - - - - - - - - - - - - - - - - - - - - - -
+Actual Total Current: 3.76 A (CT1~CT2~CT3)
+
+Calculated RMS Power
+─────────────────────
+Power V1*I1: 298.65 W   0.30 kW
+Power V1*I2: 298.65 W   0.30 kW
+Power V1*I3: 301.04 W   0.30 kW
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Calculated Total Power: 898.59 W (CT1~CT2~CT3)
+
+Active Power (Absorbed or Used by the Load)
+────────────────────────────────────────────
+Active Power CT1: 298.29 W      (Import)
+Active Power CT2: 299.23 W      (Import)
+Active Power CT3: 300.55 W      (Import)
+- - - - - - - - - - - - - - - - - - - - -
+Total Active Power: 598.88 W   (Import)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Calculated Total Active Power: 898.07 W (CT1~CT2~CT3)
+
+Re-Active Power
+────────────────
+ReActive Power CT1: 16.51 VAR
+ReActive Power CT2: 16.02 VAR
+ReActive Power CT3: 16.85 VAR
+- - - - - - - - - - - - - - - - - - - - - - - - 
+Total ReActive Power: 33.35 VAR (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Reactive Power: 49.38 W (CT1~CT2~CT3)
+
+Apparent Power (Total Amount of Power Flowing from Source to Load)
+───────────────────────────────────────────────────────────────────
+Apparent Power CT1: 299.03 VA
+Apparent Power CT2: 299.90 VA
+Apparent Power CT3: 301.31 VA
+- - - - - - - - - - - - - - - - - - - - - - - - 
+Total Apparent Power: 600.40 VA (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Calculated Total Apparent Power: 900.24 W (CT1~CT2~CT3)
+
+
+Other Power Information
+────────────────────────
+Total Fundamental Power: 598.58 pH(t)
+
+Total Harmonic Power: 0.73
+Power Factor
+─────────────
+Power Factor CT1: 1.00 PF
+Power Factor CT2: 1.00 PF
+Power Factor CT3: 1.00 PF
+- - - - - - - - - - - - - - - 
+Total Power Factor: 1.00 PF
+
+Phase Angle
+────────────
+Phase Angle CT1: 3.20
+Phase Angle CT2: 3.00
+Phase Angle CT3: 3.10
+
+Other Information
+──────────────────
+Chip Temperature: 28.00 °C
+
+Mains Frequency: 50.02 Hz
+
+PCB Temperature Sensor (NTC_IN VN):     25.15 ºC
+
+ADC Raw: 2559 > ADC Adjusted: 2559 > Calculated: 24.37 V

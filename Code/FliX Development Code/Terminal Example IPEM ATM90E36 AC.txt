@@ -1,0 +1,226 @@
+Std Prod PCA Bring Up.  Jumpers set.  AC In. Resistive 330W Load.
+------------------------------------------------------------------------------------------------------------------------
+
+Settings. Default
+
+// **************** DEFINE Device ATM90E32 or ATM90E36 ****************
+#define ATM90E32_DEVICE 32
+#define ATM90E36_DEVICE 36
+
+// On IPEM, Set required ATM90E3x device, ATM90E32_DEVICE or ATM90E36_DEVICE
+#define ATM90DEVICE ATM90E36_DEVICE
+
+// **************** DEFINE Current Clamp Input CT4 ****************
+#define CT4_ATM 90 // ATM90E36 (N)
+#define CT4_ESP 32 // ESP32 ADC.  Suitable for both ATM90E32 or ATM90E36
+
+// CT4 Software Configuration.  Can be used for CT INPUT to ATM90E36, ESP32 GP35.
+#define CT4_CONFIG CT4_ESP // On IPEM, Set CT4 ADC Configuration.  CT4_ATM or CT4_ESP
+#define CT4_ENABLED false  // CT4 ESP32 Clamp (Default false)
+
+// **************** DEFINE VOLTAGE REFERENCE ****************
+#define ATM_SINGLEVOLTAGE false // Set to true to use V1/ATM_V1P for VoltageGain1, VoltageGain2, VoltageGain3 and Calcfulations for CT1, CT2, CT3, CT4, CTN.  (Default true)
+
+------------------------------------------------------------------------------------------------------------------------
+
+FliX - Integrated Firmware for DitroniX Power Energy Monitor SDK Boards       
+
+Scanning and Configuring Board.. Please Wait..
+
+Hardware Options and Auto Configuration
+----------------------------------------
+Scanning I2C Bus for Devices for Auto Configuration ...
+ I2C Possible Device(s) found at Address:
+ * Hex 0x3C (60)         OLED
+ * Hex 0x50 (80)         EEPROM
+ I2C Bus Scan Complete
+
+IPEM ESP32 ATM90E32 ATM90E36 IoT Power Energy Monitor
+
+IPEM Register Status and Startup Report
+ESP32 Serial ID: 40CC4CBBBC2C
+FliX Firmware Version: 250112
+Board Location: House
+
+EEPROM Check: 20        (Validation OK)
+
+PWM (ESP32) Output is Disabled
+
+
+Initialising OLED Display
+Testing RGB LED
+
+Wi-Fi Options
+--------------
+Wi-Fi is Disabled
+MQTT Publishing is Disabled
+Domoticz Publishing is Disabled
+Zabbix Publishing Disabled
+
+Software Options
+-----------------
+ADC Raw: 2534 > ADC Adjusted: 2534 > Calculated: 24.13 V
+
+
+AC > DC Voltage Input Detected. ATM90 Powered
+
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+
+FliX - Integrated Firmware for DitroniX Power Energy Monitor SDK Boards       
+
+Scanning and Configuring Board.. Please Wait..
+
+Hardware Options and Auto Configuration
+----------------------------------------
+Scanning I2C Bus for Devices for Auto Configuration ...
+ I2C Possible Device(s) found at Address:
+ * Hex 0x3C (60)         OLED
+ * Hex 0x50 (80)         EEPROM
+ I2C Bus Scan Complete
+
+IPEM ESP32 ATM90E32 ATM90E36 IoT Power Energy Monitor
+
+IPEM Register Status and Startup Report
+ESP32 Serial ID: 40CC4CBBBC2C
+FliX Firmware Version: 250112
+Board Location: House
+
+EEPROM Check: 20        (Validation OK)
+
+PWM (ESP32) Output is Disabled
+
+
+Initialising OLED Display
+Testing RGB LED
+
+Wi-Fi Options
+--------------
+Wi-Fi is Disabled
+MQTT Publishing is Disabled
+Domoticz Publishing is Disabled
+Zabbix Publishing Disabled
+
+Software Options
+-----------------
+ADC Raw: 2552 > ADC Adjusted: 2552 > Calculated: 24.30 V
+
+
+AC > DC Voltage Input Detected. ATM90 Powered
+
+Connecting to the ATM90E36
+ATM90E36 Connected - OK
+
+IPEM Hardware Setup and Power-Up Test - Board Initialized
+
+Register Status and Diagnostic Report
+ESP32 Serial ID: 40CC4CBBBC2C
+Firmware Version: 250112
+Location: House
+
+Hardware Configuration for ATM90E36
+------------------------------------
+AC Voltage Inputs:      Single Input V1 will be used for Current Phase Calculations
+Split AC Voltage:       Disabled
+CT Current Clamps:      Configured for 1, 2 or 3 Phase
+CT4 Current Input:      Configured for ESP32 ADC
+
+[Status Values]
+System Status:          S0:0xC0         S1:0x0
+Meter Status:           E0:0x0          E1:0x0
+
+Mains RMS Voltage
+------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+Voltage 1: 239.72 V (Single Line Voltage Selected)
+
+Mains RMS Current
+------------------
+Current CT1: 1.35 A
+Current CT2: 1.35 A
+Current CT3: 1.36 A
+- - - - - - - - - - - - - - - - - - - - - - -
+Actual Total Current: 4.06 A (CT1~CT2~CT3)
+
+Calculated RMS Power
+---------------------
+Power V1*I1: 323.62 W   0.32 kW
+Power V1*I2: 323.62 W   0.32 kW
+Power V1*I3: 326.02 W   0.33 kW
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Power: 973.51 W (CT1~CT2~CT3)
+
+Active Power (Absorbed or Used by the Load)
+--------------------------------------------
+Active Power CT1: 0.32 kW       (Import)
+Active Power CT2: 0.32 kW       (Import)
+Active Power CT3: 0.33 kW       (Import)
+- - - - - - - - - - - - - - - - - - - -
+Total Active Power: 0.65 kW     (Import)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Calculated Total Active Power: 0.97 W (CT1~CT2~CT3)
+
+Re-Active Power
+----------------
+ReActive Power CT1: 0.00 VAR
+ReActive Power CT2: 0.00 VAR
+ReActive Power CT3: 0.00 VAR
+- - - - - - - - - - - - - - - - - - - - - - - -
+Total ReActive Power: 0.03 VAR (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Calculated Total Reactive Power: 0.00 W (CT1~CT2~CT3)
+
+Apparent Power (Total Amount of Power Flowing from Source to Load)
+-------------------------------------------------------------------
+Apparent Power CT1: 0.32 VA
+Apparent Power CT2: 0.32 VA
+Apparent Power CT3: 0.33 VA
+- - - - - - - - - - - - - - - - - - - - - - -
+Total Apparent Power: 0.65 VA (CT1~CT2~CT3)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Calculated Total Apparent Power: 0.97 W (CT1~CT2~CT3)
+
+
+Power Factor
+-------------
+Power Factor CT1: 1.00 PF
+Power Factor CT2: 1.00 PF
+Power Factor CT3: 1.00 PF
+- - - - - - - - - - - - - - -
+Total Power Factor: 1.00 PF
+
+Phase Angle
+------------
+Phase Angle CT1: 3.00
+Phase Angle CT2: 2.90
+Phase Angle CT3: 3.00
+
+Voltage Harmonics
+------------------
+Voltage Harmonics CT1: 0.00
+Voltage Harmonics CT2: 0.00
+Voltage Harmonics CT3: 0.00
+
+Current Harmonics
+------------------
+Current Harmonics CT1: 0.00
+Current Harmonics CT2: 0.00
+Current Harmonics CT3: 0.00
+
+Other Information
+------------------
+Chip Temperature: 20.00 °C
+
+Mains Frequency: 49.93 Hz
+
+PCB Temperature Sensor (NTC_IN VN):     23.99 ºC
+
+ADC Raw: 2592 > ADC Adjusted: 2592 > Calculated: 24.69 V
