@@ -1,8 +1,8 @@
-**FliX DitroniX Power Energy Monitors Firmware**
+**FliX and FliX Plus - DitroniX Power Energy Monitors Firmware**
 
 ------------
 
-This folder supports FliX, which is an Integrated Firmware Development Code for DitroniX Power Energy Monitor SDK Boards
+This folder supports **FliX** and **FLiX Plus**, which are Integrated Firmware Development Code for DitroniX Power Energy Monitor SDK Boards
 
   Remember!
   - Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
@@ -19,7 +19,7 @@ Additional information, and other technical details on this project, maybe found
 
 **Repository Folders**
 
- - **Code** *(Code examples for Arduino  IDE and PlatformIO)*
+ - **Code** *(Code examples for Raspberry Pi, Arduino  IDE and PlatformIO)*
  -  **Datasheets and Information** *(Component Datasheets, Schematics, Board Layouts, Photos, Technical Documentation)*
  - **Certification** *(Related Repository Project or Part, Certification Information)*
 
