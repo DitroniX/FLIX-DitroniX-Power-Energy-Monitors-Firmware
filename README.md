@@ -1,8 +1,10 @@
-## FliX-DitroniX-Power-Energy-Monitors-Firmware
+## FliX and FliX Plus - DitroniX Power Energy Monitors Firmware
 
 The **IPEM** and **IPEC** Development Code contains a number of features, which may be either used purely for development, a basis for your own firmware, or with features enabled (via software switches), provide a complete firmware solution, publishing to the outside World.
 
-This firmware has evolved over time and although originally was purely for bring-up testing, it has expanded into much more. It has developed way past its original bring-up task and is now quite comprehensive.
+In addition, the new **[IPEM PiHat](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** has also been launched Q1 2025.  Whilst these boards are directed towards the Raspberry Pi, due to the ease of interfacing and in order to exercise and fully test these, I took a version of **FLiX** and made a number of changes in order to drive these newer boards via an ESP32 Interposer.  This version of **FLiX** is called **FLIX Plus**.
+
+This firmware has evolved over time and although originally was purely for bring-up testing, it has expanded into much more. It has developed way past its original bring-up task and is now quite comprehensive.  It is though, still work in progress and free to be adapted and used.
 
 This test code is OPEN SOURCE and formatted for easier viewing. It may be freely used, or modified as needed. You may use as is, use for bring-up development, simply use the bits you like! final use and for full IoT publishing. It is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
@@ -10,8 +12,13 @@ To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 
 
 ## **Versions**
 
- - 231129 - Beta Release Primarily for the ATM09E32 with basic ATM90E36 support.
- - 250111 - Main  Release.  
+
+  - 250407 - Internal preparation for **FLiX Plus** (For IPEM PiHat and  IPEM PiHat Lite boards)
+	 -  Supports only ATM90E36
+	 -  Supports IPEM PiHats via ESP32 Interposer
+	 -  Beta Release to GitHub during week of 14th April
+  - 250112 - Tweaks
+  - 250111 - Main  Release.  
 	 -  Supports ATM90E32
 	 -  Supports ATM90E36
 	 -  Major housekeeping
@@ -19,10 +26,12 @@ To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 
 	 -  Various Bug fixes
 	 -  Japan Voltage Support
 	 -  Voltage and Current Harmonics
+  - 231129 - Beta Release Primarily for the ATM09E32 with basic ATM90E36 support.
+
 
 **Board Selection**
 
-With the family addition of the IPEC board and IPEX Expansion, the original firmware has moved away from just IPEM into an integrated development branch - with auto board detect. This will allow for future expansion and system integration.
+With the family addition of the [IPEC](https://github.com/DitroniX/IPEC-IoT-Power-Energy-Controller) board and [IPEX](https://github.com/DitroniX/IPEX-IoT-Power-Energy-Controller-Expansion-Board) Expansion, the original firmware has moved away from just [IPEM](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor) into an integrated development branch - with auto board detect. This will allow for future expansion and system integration.
 
 The **FliX** firmware currently supports the below board variants:
 
@@ -37,9 +46,14 @@ The **FliX** firmware currently supports the below board variants:
 -   **IPEX-1 IoT Power Energy Controller Expansion**
     -   IPEX1-ACS758-ADS1115 \| ACS758 ADS1115 PCA9685
 
+The **FliX Plus** beta firmware currently supports the below board variants:
+
+   -   **[IPEM PiHat](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** ATM90E36 via ESP32 Interposer.  WIP: ADC, DAC, RTC, Stacking.
+   -   **[IPEM PiHat Lite](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** ATM90E36 via ESP32 Interposer.  WIP: ADC, DAC, RTC, Stacking.
+
 **Continual Development**
 
-Due to the nature of this firmware, **FliX** remains under development and is subject to change, improvements and additions.
+Due to the nature of this firmware, **FliX** and **FliX Plus** remains under development and is subject to change, improvements and additions.
 
 During any development, the firmware is carefully tested on the range of supported boards. However, should you notice a gremlin, please feel free to let us know!
 
