@@ -16,7 +16,7 @@ To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 
   - 250407 - Internal preparation for **FLiX Plus** (For IPEM PiHat and  IPEM PiHat Lite boards)
 	 -  Supports only ATM90E36
 	 -  Supports IPEM PiHats via ESP32 Interposer
-	 -  Beta Release to GitHub during week of 14th April
+	 -  Beta Release to GitHub during week of 21st April
   - 250112 - Tweaks
   - 250111 - Main  Release.  
 	 -  Supports ATM90E32
