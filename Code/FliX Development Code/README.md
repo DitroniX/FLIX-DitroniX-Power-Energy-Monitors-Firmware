@@ -3,7 +3,7 @@
 NOTE: This original IPEM/IPEC firmware has been renamed to FliX and resides in https://github.com/DitroniX/FLIX-DitroniX-Power-Energy-Monitors-Firmware
   
 **Development Code - WORK-IN-PROGRESS - NOT COMPLETE!!!**
-Updated 29th November 2023
+Updated 15th June 2025
 
 This firmware (using PlatformIO), has evolved over time and although originally was purely for bring-up testing, it has expanded into much more.  As such, and with the family addition of the IPEC board and IPEX, this firmware has moved away from just IPEM into an integrated development branch - with auto board detect.  This will allow for future expansion.
 

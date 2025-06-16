@@ -75,36 +75,36 @@ void Initialise_ESP32_PWM(int PWM_GPIO)
     }
     else
     {
-        ledcSetup(PWM_PCA_ChannelOut, PWM32_FrequencyHz, PWM32_ResolutionBit);
-        ledcAttachPin(PWM_GPIO, PWM32_ChannelOut);
-        PWM_DutyCycleOutputUpperLimit = (int)(pow(2, PWM32_ResolutionBit) - 1); // 8bit = 256-1 | 10bit = 1024-1 | 12bit = 4096-1 | 14bit = 16384-1 | 16bit = 65536-1.
-        ledcWrite(PWM_PCA_ChannelOut, 0);
+        // ledcSetup(PWM_PCA_ChannelOut, PWM32_FrequencyHz, PWM32_ResolutionBit);
+        // ledcAttachPin(PWM_GPIO, PWM32_ChannelOut);
+        // PWM_DutyCycleOutputUpperLimit = (int)(pow(2, PWM32_ResolutionBit) - 1); // 8bit = 256-1 | 10bit = 1024-1 | 12bit = 4096-1 | 14bit = 16384-1 | 16bit = 65536-1.
+        // ledcWrite(PWM_PCA_ChannelOut, 0);
 
-        Serial.println("PWM (ESP32) Initialised\n");
+        // Serial.println("PWM (ESP32) Initialised\n");
 
-        if (EnablePWMLocal == true)
-            Serial.println("PWM (ESP32) Output is Enabled from PWMLocal");
+        // if (EnablePWMLocal == true)
+        //     Serial.println("PWM (ESP32) Output is Enabled from PWMLocal");
 
-        if (EnablePWMRemote == true)
-            Serial.println("PWM (ESP32) Output is Enabled from PWMRemote");
+        // if (EnablePWMRemote == true)
+        //     Serial.println("PWM (ESP32) Output is Enabled from PWMRemote");
 
-        if (EnablePWMTestOutput == true)
-            Serial.println("PWM (ESP32) Output is Enabled from PWM Test Output");
+        // if (EnablePWMTestOutput == true)
+        //     Serial.println("PWM (ESP32) Output is Enabled from PWM Test Output");
 
-        // Configuration Info
-        Serial.printf("PWM Power Minimum Threshold W:\t\t%04.0f\n", PWM_PowerThreshold);
-        Serial.printf("PWM Power Maximum Limit W:\t\t%04.0f\n", PWM_PowerUpperLimit);
-        Serial.printf("PWM Duty Cycle Threshold:\t\t%04.3f\n", PWM_DutyCycleOutputThreshold);
-        Serial.printf("PWM Duty Cycle Max Limit V:\t\t%04.3f\n", PWM_DutyCycleOutputUpperLimit);
-        Serial.printf("PWM Percentage Display Lower:\t\t%d\n", PWM_PercentageMinimum);
-        Serial.printf("PWM Percentage Display Upper:\t\t%d\n", DAC_PercentageUpper);
-        Serial.printf("PWM Resolution Bit:\t\t\t%d\n", PWM32_ResolutionBit);
-        Serial.printf("PWM Maximum Resolution:\t\t\t%d\n", PWM_MaximumResolution);
-        Serial.printf("PWM Frequency Hz:\t\t\t%d\n", PWM32_FrequencyHz);
-        Serial.printf("PWM Channel Output:\t\t\t%d\n", PWM_PCA_ChannelOut);
-        Serial.printf("PWM Port Output GPIO :\t\t\t%d\n", PWM_GPIO);
+        // // Configuration Info
+        // Serial.printf("PWM Power Minimum Threshold W:\t\t%04.0f\n", PWM_PowerThreshold);
+        // Serial.printf("PWM Power Maximum Limit W:\t\t%04.0f\n", PWM_PowerUpperLimit);
+        // Serial.printf("PWM Duty Cycle Threshold:\t\t%04.3f\n", PWM_DutyCycleOutputThreshold);
+        // Serial.printf("PWM Duty Cycle Max Limit V:\t\t%04.3f\n", PWM_DutyCycleOutputUpperLimit);
+        // Serial.printf("PWM Percentage Display Lower:\t\t%d\n", PWM_PercentageMinimum);
+        // Serial.printf("PWM Percentage Display Upper:\t\t%d\n", DAC_PercentageUpper);
+        // Serial.printf("PWM Resolution Bit:\t\t\t%d\n", PWM32_ResolutionBit);
+        // Serial.printf("PWM Maximum Resolution:\t\t\t%d\n", PWM_MaximumResolution);
+        // Serial.printf("PWM Frequency Hz:\t\t\t%d\n", PWM32_FrequencyHz);
+        // Serial.printf("PWM Channel Output:\t\t\t%d\n", PWM_PCA_ChannelOut);
+        // Serial.printf("PWM Port Output GPIO :\t\t\t%d\n", PWM_GPIO);
 
-        Serial.println("");
+        // Serial.println("");
     }
 
 } // Initialise_ESP32_PWM

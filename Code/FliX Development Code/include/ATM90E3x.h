@@ -25,7 +25,7 @@
 #define ATM90E36_DEVICE 36 // Do Not Change.   Note: ATM90E36 Formula Values may need Tweaking.
 
 // On IPEM, Set required ATM90E3x device, ATM90E32_DEVICE or ATM90E36_DEVICE
-#define ATM90DEVICE ATM90E32_DEVICE
+#define ATM90DEVICE ATM90E36_DEVICE
 
 // **************** DEFINE Current Clamp Input CT4 ****************
 #define CT4_ATM 90 // Do Not Change. ATM90E36 (N)

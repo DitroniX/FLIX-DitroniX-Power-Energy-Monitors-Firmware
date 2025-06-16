@@ -24,7 +24,7 @@
 // ****************  VARIABLES / DEFINES / STATIC / STRUCTURES / CONSTANTS ****************
 
 // Application
-String AppVersion = "250112"; // Internal Firmware Date Code
+String AppVersion = "250615"; // Internal Firmware Date Code
 
 // App USER
 String LocationName = "House"; // Enter Name Location of Device such as House, Solar etc.  Used for Serial Monitor and OLED.
