@@ -1,11 +1,18 @@
-**FliX and FliX Plus - DitroniX Power Energy Monitors Firmware**
+**FliX and FliX PiHat - DitroniX Power Energy Monitors Firmware**
 
 ------------
 
-This folder supports **FliX** and **FLiX Plus**, which are Integrated Firmware Development Code for DitroniX Power Energy Monitor SDK Boards
+This folder supports **FliX** and **FLiX PiHat**, which are Integrated Firmware Development Code for DitroniX Power Energy Monitor SDK Boards
 
-  Remember!
+  ESP32 Based
   - Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
+  - You may set the BAUD rate to 921600 to speed up flashing.
+  - The SDK boards do NOT need external power to flash.  It will take Power from the USB 5V.
+
+  ESP32-C6 Based
+  - IPEM PiHat with ESPuno Pi Zero Interposer (ESP32-C6-MINI-1)
+  - Set the BOARD to ESP32-C6 DEV MODULE (or similar).  
+  - Either of the Type C Interfaces can be used.  The UART interface is also Serial Logging
   - You may set the BAUD rate to 921600 to speed up flashing.
   - The SDK boards do NOT need external power to flash.  It will take Power from the USB 5V.
   
