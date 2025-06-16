@@ -8,9 +8,9 @@ Dave Williams, DitroniX 2019-2025 (ditronix.net)
 
 ## **FLiX Development Code Variants:**
 
-### FliX
+### FliX [ATM90E32/ATM90E36]
 
- - **IPEM IoT Power Energy Monitor**
+ - **IPEM IoT Power Energy Monitor** 
 
 	- Features include IPEM ESP32 ATM90E32 ATM90E36 16bit ADC 24C64 EEPROM 3Phase 3+1 CT-Clamps Current Voltage Frequency Power Factor GPIO I2C OLED SMPS D1 USB
 	- Variants
@@ -19,7 +19,7 @@ Dave Williams, DitroniX 2019-2025 (ditronix.net)
 	    -   IPEM32E-M90E36-INT \| ESP32-WROOM-32E ATM90E36 AT24C64
 	    -   IPEM32UE-M90E36-EXT \| ESP32-WROOM-32UE ATM90E36 AT24C64
 
- - **IPEC IoT Power Energy Controller**
+ - **IPEC IoT Power Energy Controller** [ATM90E32]
 
 	- Features include IPEC ESP32 ATM90E32 16bit ADC MCP4728 DAC 24C64 EEPROM 3Phase 3 CT-Clamps Current Voltage Frequency Power Factor GPIO I2C OLED SMPS D1 USB.
 	-  Variants
@@ -31,7 +31,7 @@ Dave Williams, DitroniX 2019-2025 (ditronix.net)
 	- Variants
 	    -   IPEX1-ACS758-ADS1115 \| ACS758 ADS1115 PCA9685 
 
-### FliX PiHat
+### FliX PiHat [ATM90E36]
 
 - **IPEM PiHat** 
 	- with ATM90E36 with ESP32, or ESP32-C6 (ESPuno Pi Zero), Interposer
