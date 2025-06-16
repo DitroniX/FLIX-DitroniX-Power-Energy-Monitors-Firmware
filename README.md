@@ -37,6 +37,9 @@ Dave Williams, DitroniX 2019-2025 (ditronix.net)
 	- with ATM90E36 with ESP32, or ESP32-C6 (ESPuno Pi Zero), Interposer
 - **IPEM PiHat Lite** 
 	- with ATM90E36 with ESP32, or ESP32-C6 (ESPuno Pi Zero), Interposer
+- **IPEM (also Supports)** 
+	- IPEM32E-M90E36-INT \| ESP32-WROOM-32E ATM90E36 AT24C64
+	- IPEM32UE-M90E36-EXT \| ESP32-WROOM-32UE ATM90E36 AT24C64
 
 ## SDK Boards
 
