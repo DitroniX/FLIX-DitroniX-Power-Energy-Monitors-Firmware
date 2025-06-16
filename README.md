@@ -1,23 +1,60 @@
-## FliX and FliX Plus - DitroniX Power Energy Monitors Firmware
+## FliX and FliX PiHat - DitroniX Power Energy Monitors Firmware
 
-The **IPEM** and **IPEC** Development Code contains a number of features, which may be either used purely for development, a basis for your own firmware, or with features enabled (via software switches), provide a complete firmware solution, publishing to the outside World.
+Development Test and Bring-up Code - WORK-IN-PROGRESS 
 
-In addition, the new **[IPEM PiHat](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** has also been launched Q1 2025.  Whilst these boards are directed towards the Raspberry Pi, due to the ease of interfacing and in order to exercise and fully test these, I took a version of **FLiX** and made a number of changes in order to drive these newer boards via an ESP32 Interposer.  This version of **FLiX** is called **FLIX Plus**.
+Updated 15th June 2025
+
+Dave Williams, DitroniX 2019-2025 (ditronix.net)
+
+## **FLiX Development Code Variants:**
+
+### FliX
+
+ - **IPEM IoT Power Energy Monitor**
+
+	- Features include IPEM ESP32 ATM90E32 ATM90E36 16bit ADC 24C64 EEPROM 3Phase 3+1 CT-Clamps Current Voltage Frequency Power Factor GPIO I2C OLED SMPS D1 USB
+	- Variants
+	    -   IPEM32E-M90E32-INT \| ESP32-WROOM-32E ATM90E32 AT24C64
+	    -   IPEM32UE-M90E32-EXT \| ESP32-WROOM-32UE ATM90E32 AT24C64
+	    -   IPEM32E-M90E36-INT \| ESP32-WROOM-32E ATM90E36 AT24C64
+	    -   IPEM32UE-M90E36-EXT \| ESP32-WROOM-32UE ATM90E36 AT24C64
+
+ - **IPEC IoT Power Energy Controller**
+
+	- Features include IPEC ESP32 ATM90E32 16bit ADC MCP4728 DAC 24C64 EEPROM 3Phase 3 CT-Clamps Current Voltage Frequency Power Factor GPIO I2C OLED SMPS D1 USB.
+	-  Variants
+	    -   IPEC32E-M90E32-INT \| ESP32-WROOM-32E ATM90E32 MSP4728 AT24C64
+	    -   IPEC32UE-M90E32-EXT \| ESP32-WROOM-32UE ATM90E32 AT24C64
+
+ - **IPEX-1 IoT Power Energy Controller Expansion**
+
+	- Variants
+	    -   IPEX1-ACS758-ADS1115 \| ACS758 ADS1115 PCA9685 
+
+### FliX PiHat
+
+- **IPEM PiHat** 
+	- with ATM90E36 with ESP32, or ESP32-C6 (ESPuno Pi Zero), Interposer
+- **IPEM PiHat Lite** 
+	- with ATM90E36 with ESP32, or ESP32-C6 (ESPuno Pi Zero), Interposer
+
+## SDK Boards
+
+ - The **[IPEM](https://github.com/DitroniX/IPEM-IoT-Power-Energy-Monitor)** and **[IPEC](https://github.com/DitroniX/IPEC-IoT-Power-Energy-Controller)** Development Code contains a number of features, which may be either used purely for development, a basis for your own firmware, or with features enabled (via software switches), provide a complete firmware solution, publishing to the outside World.
+
+ - The **[IPEM PiHat](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** and **[IPEM PiHat Lite](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** boards are directed towards the Raspberry Pi series 
+	 - Due to the ease of interfacing and in order to exercise and fully test these, I took a version of FLiX and made a number of changes in order to drive these newer boards via an ESP32/ESP32-C6 Interposer. 
 
 This firmware has evolved over time and although originally was purely for bring-up testing, it has expanded into much more. It has developed way past its original bring-up task and is now quite comprehensive.  It is though, still work in progress and free to be adapted and used.
 
 This test code is OPEN SOURCE and formatted for easier viewing. It may be freely used, or modified as needed. You may use as is, use for bring-up development, simply use the bits you like! final use and for full IoT publishing. It is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 ATM90E36 Test Code), has been given a new name – **Flix**
-
-## **Versions**
-
-
-  - 250601- Beta Release being tested on updated ESPuno Pi Zero boards
-  - 250407 - Internal preparation for **FLiX Plus** (For IPEM PiHat and  IPEM PiHat Lite boards)
-	 -  Supports only ATM90E36
-	 -  Supports IPEM PiHats via ESP32 Interposer
-	 -  Beta Release to GitHub delayed due to wanting to test on the preproduction ESPuno Pi Zero
+## **FLiX Updates**
+  - 250615 - Updated ESPAsyncWebServer due to library changes.
+	 -  Removed: me-no-dev/ESP Async WebServer @ ^1.2.3
+	 -  Added: esp32async/ESPAsyncWebServer@^3.7.8
+	 -  Disabled PWM.  Requires updating
+	 -  Version: 250112 to 250615
   - 250112 - Tweaks
   - 250111 - Main  Release.  
 	 -  Supports ATM90E32
@@ -28,6 +65,15 @@ To make it easier to manage and describe, the firmware variants (ESP32 ATM90E32 
 	 -  Japan Voltage Support
 	 -  Voltage and Current Harmonics
   - 231129 - Beta Release Primarily for the ATM09E32 with basic ATM90E36 support.
+
+## **FLiX PiHat Updates**
+  - 250615 - Beta version being tested prior to upload
+  - 250601 - Beta Release being tested on updated ESPuno Pi Zero boards
+  - 250407 - Internal preparation for **FLiX PiHat** (For IPEM PiHat and  IPEM PiHat Lite boards)
+	 -  Supports only ATM90E36
+	 -  Supports IPEM PiHats via ESP32 Interposer
+	 -  Beta Release to GitHub delayed due to wanting to test on the preproduction ESPuno Pi Zero
+
 
 
 **Board Selection**
@@ -47,20 +93,16 @@ The **FliX** firmware currently supports the below board variants:
 -   **IPEX-1 IoT Power Energy Controller Expansion**
     -   IPEX1-ACS758-ADS1115 \| ACS758 ADS1115 PCA9685
 
-The **FliX Plus** beta firmware currently supports the below board variants:
+The **FliX PiHat** beta firmware currently supports the below board variants:
 
    -   **[IPEM PiHat](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** ATM90E36 via ESP32 Interposer.  WIP: ADC, DAC, RTC, Stacking.
    -   **[IPEM PiHat Lite](https://github.com/DitroniX/IPEM-PiHat-IoT-Power-Energy-Monitor)** ATM90E36 via ESP32 Interposer.  WIP: ADC, DAC, RTC, Stacking.
 
 **Continual Development**
 
-Due to the nature of this firmware, **FliX** and **FliX Plus** remains under development and is subject to change, improvements and additions.
+Due to the nature of this firmware, all variants of FLiX remain under development and is subject to change, improvements and additions.
 
 During any development, the firmware is carefully tested on the range of supported boards. However, should you notice a gremlin, please feel free to let us know!
-
-**The Future**
-
-The longer term ideal, is for **FliX** to be streamlined even further and revamped, for example contain a single configuration file etc.
 
 **Acknowledgements**
 
@@ -106,5 +148,6 @@ Electronics Engineer | Software Developer | R&D Support | RF Engineering | Produ
 Life is one long exciting learning curve, help others by setting the seed to knowledge.
 
 ![DitroniX Supporting STEM](https://hackster.imgix.net/uploads/attachments/1606838/stem_ambassador_-_100_volunteer_badge_edxfxlrfbc1_bjdqharfoe1_xbqi2KUcri.png?auto=compress%2Cformat&w=540&fit=max)
+
 
 
