@@ -1,5 +1,7 @@
 **FliX and FliX Plus - DitroniX Power Energy Monitors Firmware**
 
+Also FliX Development Code - IPEM PiHat - ESPuno Pi Zero
+
 ------------
 
 This folder supports **FliX** and **FLiX Plus**, which are Integrated Firmware Development Code for DitroniX Power Energy Monitor SDK Boards

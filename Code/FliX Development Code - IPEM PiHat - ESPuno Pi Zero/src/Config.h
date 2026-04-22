@@ -29,7 +29,7 @@
 // ################################ Main ################################
 
 // Application
-const String AppVersion = "250615"; // Internal Firmware Date Code
+const String AppVersion = "260422"; // Internal Firmware Date Code
 
 // Version Check - Automatic Selection
 String AppName;                   // App Name - Do Not Change
@@ -94,7 +94,7 @@ boolean EnableOLED = false;   // OLED - Do Not Change
 
 // Define I2C (Addresses)
 #define I2C_Address_EPZ 0x20 // ESPuno Pi Zero PCA9671 (0x20 Default - Avoid Conflicts)
-#define I2C_Address_IPH 0x20 // IPEM PiHat PCA9671 (0x20 Default - Avoid Conflicts)
+#define I2C_Address_IPH 0x10 // IPEM PiHat PCA9671 (0x10 Default - Set Switch - Avoid Conflicts)
 
 // **************** PCA9671 INPUTS ****************
 #define ATM_WO 0      // P00 - ATM Warning Out - Normally Low
