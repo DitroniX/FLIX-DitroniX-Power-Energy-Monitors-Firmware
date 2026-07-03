@@ -1,5 +1,5 @@
 /*
-  Dave Williams, DitroniX 2019-2025 (ditronix.net)
+  Dave Williams, DitroniX 2019-2026 (ditronix.net)
   Full header information in README
 
   This test code is OPEN SOURCE and formatted for easier viewing.  Although is is not intended for real world use, it may be freely used, or modified as needed.
@@ -35,7 +35,7 @@
 
 // **************** DEFINE VOLTAGE REFERENCE ****************
 // Read this page for IPEM https://github.com/DitroniX/IPEM-IoT-Power-Energy-Monitor/wiki/AC-Mains-Voltage-Input
-#define ATM_SINGLEVOLTAGE true // Set to true to use V1/ATM_V1P for VoltageGain1, VoltageGain2, VoltageGain3 and Calculations for CT1, CT2, CT3, CT4, CTN.  (Default true)
+#define ATM_SINGLEVOLTAGE false // Set to true to use V1/ATM_V1P for VoltageGain1, VoltageGain2, VoltageGain3 and Calculations for CT1, CT2, CT3, CT4, CTN.  (Default true)
 
 // **************** DEFINE PHASE TYPE ****************
 #define ATM_SPLITPHASE false // If Split Phase (i.e. USA 120+120), set to true else leave false (NB. Not fully tested). ATM_SINGLEVOLTAGE = false

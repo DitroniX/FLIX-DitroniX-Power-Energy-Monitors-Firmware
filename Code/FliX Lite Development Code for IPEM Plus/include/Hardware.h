@@ -1,5 +1,5 @@
 /*
-  Dave Williams, DitroniX 2019-2025 (ditronix.net)
+  Dave Williams, DitroniX 2019-2026 (ditronix.net)
   Full header information in README
 
   This test code is OPEN SOURCE and formatted for easier viewing.  Although is is not intended for real world use, it may be freely used, or modified as needed.
@@ -18,7 +18,7 @@
 // ****************  VARIABLES / DEFINES / STATIC / STRUCTURES / CONSTANTS ****************
 
 // Application
-String AppVersion = "260527"; // Internal Firmware Date Code
+String AppVersion = "260703"; // Internal Firmware Date Code
 
 // App USER
 String LocationName = "Test"; // Enter Name Location of Device such as House, Solar etc.  Used for Serial Monitor and OLED.
@@ -31,9 +31,12 @@ const int AverageDelay = 20;             // Average Multi-Sample Delay within Ca
 boolean EnableAveraging = true;          // Set to true to enable averaging (ESP32 DCV) within Calculate Average Value and Reduce Jitter.  Default true
 boolean EnableNoiseFilterSquelch = true; // This realtes to NoiseFilterSquelch Threshold.  false returns raw values.  Default true.
 
+
+// The below are used to swtich in and out certain function.
 // Constants USER
 const int LoopDelay = 1;                         // Loop Delay in Seconds.  Default 1.
-boolean EnableBasicLoop = false;                 // Set to true to display, in Serial Monitor, loop readings and displaying only one per reset cycle.  Default false.
+boolean EnableBasicLoop = true;                  // Set to true to display, in Serial Monitor, loop readings and displaying only one per reset cycle.  Default false.
+boolean EnableTopLevelView = true;               // Set to true to display, in Serial Monitor, loop readings and displaying only top level values  Default false.
 boolean EnableDisplayBoardConfiguration = false; // Set to true to display, in Serial Monitor, board software configuration Information if DisplayFull is true. Default true.
 boolean EnableOLEDLoop = false;                  // Set to true to enable OLED Display in Loop.  Over-ride via I2C Scan.  Check OLED Instance below, for OLED Selection.  Default true.
 
@@ -278,7 +281,7 @@ void InitialiseOLED()
 // RGB
 void RGB_Test()
 {
-int InterDelay= 100;
+  int InterDelay = 100;
 
   // Turn off RGB
   ws2812b.clear();
@@ -292,7 +295,7 @@ int InterDelay= 100;
 
   // Turn off RGB
   ws2812b.clear();
-  ws2812b.show(); 
+  ws2812b.show();
   delay(InterDelay);
 
   // GREEN
@@ -312,7 +315,7 @@ int InterDelay= 100;
 
   // Turn off RGB
   ws2812b.clear();
-  ws2812b.show(); 
+  ws2812b.show();
   delay(InterDelay);
 
   // White
@@ -322,7 +325,7 @@ int InterDelay= 100;
 
   // Turn off RGB
   ws2812b.clear();
-  ws2812b.show(); 
+  ws2812b.show();
 } // RGB
 
 // Display BIN from Var
@@ -582,8 +585,8 @@ void ConfigureBoard()
   InitialiseOLED();
 
   // Initialize NeoPixel
-  ws2812b.begin();  // Initialize WS2812B
-  ws2812b.clear();  // Turn off RGB for two seconds
+  ws2812b.begin(); // Initialize WS2812B
+  ws2812b.clear(); // Turn off RGB for two seconds
 
 } // ConfigureBoard
 

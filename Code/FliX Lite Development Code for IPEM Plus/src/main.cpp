@@ -1,5 +1,5 @@
 /*
-  Dave Williams, DitroniX 2019-2025 (ditronix.net)
+  Dave Williams, DitroniX 2019-2026 (ditronix.net)
   Full header information in README
 
   This test code is OPEN SOURCE and formatted for easier viewing.  Although is is not intended for real world use, it may be freely used, or modified as needed.
@@ -137,11 +137,12 @@ void DisplayRegisters(boolean DisplayFull = true)
     Serial.println("Power V1*I1: " + String(CalculatedPowerCT1) + " W\t" + String(CalculatedPowerCT1 / 1000) + " kW");
     Serial.println("Power V1*I2: " + String(CalculatedPowerCT2) + " W\t" + String(CalculatedPowerCT2 / 1000) + " kW");
     Serial.println("Power V1*I3: " + String(CalculatedPowerCT3) + " W\t" + String(CalculatedPowerCT3 / 1000) + " kW");
-  }
 
 #if ATM90DEVICE == ATM90E36_DEVICE
-  Serial.println("Power V1*I4: " + String(CalculatedPowerCT4) + " W");
+    Serial.println("Power V1*I4: " + String(CalculatedPowerCT4) + " W");
 #endif
+  }
+
 #endif
 
 // Calculate Total Watts
@@ -157,238 +158,244 @@ void DisplayRegisters(boolean DisplayFull = true)
     PrintSeparator("Calculated Total Power: " + String(CalculatedTotalPower) + " W (CT1~CT2~CT3)");
 #endif
 
-  if (DisplayFull == true) // Display Expanded Information
-    Serial.println("");
-
-  // Active Power.  Extra Import/Export values included to provide added detail for Home Automation logging
-  String ActiveFlag = "";
-
-  if (DisplayFull == true) // Display Expanded Information
-    PrintUnderline("Active Power (Absorbed or Used by the Load)");
-
-  // Active Power CT1 - Always a Postive Number
-
-  ActivePowerCT1 = NoiseFilterSquelch(eic.GetActivePowerCT1(), 0.2);
-
-  ActivePowerImportCT1 = 0;
-  ActivePowerExportCT1 = 0;
-  ActiveFlag = "";
-
-  if (ActivePowerCT1 > 0)
+  if (EnableTopLevelView == false) // Display Expanded Information
   {
-    ActivePowerImportCT1 = ActivePowerCT1;
-    ActiveFlag = "(Import)";
-  }
 
-  if (ActivePowerCT1 < 0)
-  {
-    ActivePowerExportCT1 = -ActivePowerCT1;
-    ActiveFlag = "(Export)";
-  }
+    if (DisplayFull == true) // Display Expanded Information
+      Serial.println("");
 
-  if (DisplayFull == true) // Display Expanded Information
+    // Active Power.  Extra Import/Export values included to provide added detail for Home Automation logging
+    String ActiveFlag = "";
+
+    if (DisplayFull == true) // Display Expanded Information
+      PrintUnderline("Active Power (Absorbed or Used by the Load)");
+
+    // Active Power CT1 - Always a Postive Number
+
+    ActivePowerCT1 = NoiseFilterSquelch(eic.GetActivePowerCT1(), 0.2);
+
+    ActivePowerImportCT1 = 0;
+    ActivePowerExportCT1 = 0;
+    ActiveFlag = "";
+
+    if (ActivePowerCT1 > 0)
+    {
+      ActivePowerImportCT1 = ActivePowerCT1;
+      ActiveFlag = "(Import)";
+    }
+
+    if (ActivePowerCT1 < 0)
+    {
+      ActivePowerExportCT1 = -ActivePowerCT1;
+      ActiveFlag = "(Export)";
+    }
+
+    if (DisplayFull == true) // Display Expanded Information
 
 #if ATM90DEVICE == ATM90E32_DEVICE
-    Serial.println("Active Power CT1: " + String(ActivePowerCT1) + " W \t" + ActiveFlag);
+      Serial.println("Active Power CT1: " + String(ActivePowerCT1) + " W \t" + ActiveFlag);
 #endif
 #if ATM90DEVICE == ATM90E36_DEVICE
-  Serial.println("Active Power CT1: " + String(ActivePowerCT1) + " kW \t" + ActiveFlag);
+    Serial.println("Active Power CT1: " + String(ActivePowerCT1) + " kW \t" + ActiveFlag);
 #endif
 
-  // Active Power CT2 - Always a Postive Number
-  ActivePowerCT2 = NoiseFilterSquelch(eic.GetActivePowerCT2(), 0.2);
-  ActivePowerImportCT2 = 0;
-  ActivePowerExportCT2 = 0;
-  ActiveFlag = "";
+    // Active Power CT2 - Always a Postive Number
+    ActivePowerCT2 = NoiseFilterSquelch(eic.GetActivePowerCT2(), 0.2);
+    ActivePowerImportCT2 = 0;
+    ActivePowerExportCT2 = 0;
+    ActiveFlag = "";
 
-  if (ActivePowerCT2 > 0)
-  {
-    ActivePowerImportCT2 = ActivePowerCT2;
-    ActiveFlag = "(Import)";
-  }
+    if (ActivePowerCT2 > 0)
+    {
+      ActivePowerImportCT2 = ActivePowerCT2;
+      ActiveFlag = "(Import)";
+    }
 
-  if (ActivePowerCT2 < 0)
-  {
-    ActivePowerExportCT2 = -ActivePowerCT2;
-    ActiveFlag = "(Export)";
-  }
-  if (DisplayFull == true) // Display Expanded Information
+    if (ActivePowerCT2 < 0)
+    {
+      ActivePowerExportCT2 = -ActivePowerCT2;
+      ActiveFlag = "(Export)";
+    }
+    if (DisplayFull == true) // Display Expanded Information
 
 #if ATM90DEVICE == ATM90E32_DEVICE
-    Serial.println("Active Power CT2: " + String(ActivePowerCT2) + " W \t" + ActiveFlag);
+      Serial.println("Active Power CT2: " + String(ActivePowerCT2) + " W \t" + ActiveFlag);
 #endif
 #if ATM90DEVICE == ATM90E36_DEVICE
-  Serial.println("Active Power CT2: " + String(ActivePowerCT2) + " kW \t" + ActiveFlag);
+    Serial.println("Active Power CT2: " + String(ActivePowerCT2) + " kW \t" + ActiveFlag);
 #endif
 
-  // Active Power CT3 - Always a Postive Number
-  ActivePowerCT3 = NoiseFilterSquelch(eic.GetActivePowerCT3(), 0.2);
-  ActivePowerImportCT3 = 0;
-  ActivePowerExportCT3 = 0;
-  ActiveFlag = "";
+    // Active Power CT3 - Always a Postive Number
+    ActivePowerCT3 = NoiseFilterSquelch(eic.GetActivePowerCT3(), 0.2);
+    ActivePowerImportCT3 = 0;
+    ActivePowerExportCT3 = 0;
+    ActiveFlag = "";
 
-  if (ActivePowerCT3 > 0)
-  {
-    ActivePowerImportCT3 = ActivePowerCT3;
-    ActiveFlag = "(Import)";
-  }
+    if (ActivePowerCT3 > 0)
+    {
+      ActivePowerImportCT3 = ActivePowerCT3;
+      ActiveFlag = "(Import)";
+    }
 
-  if (ActivePowerCT3 < 0)
-  {
-    ActivePowerExportCT3 = -ActivePowerCT3;
-    ActiveFlag = "(Export)";
-  }
+    if (ActivePowerCT3 < 0)
+    {
+      ActivePowerExportCT3 = -ActivePowerCT3;
+      ActiveFlag = "(Export)";
+    }
 
-  if (DisplayFull == true) // Display Expanded Information
+    if (DisplayFull == true) // Display Expanded Information
 
 #if ATM90DEVICE == ATM90E32_DEVICE
-    Serial.println("Active Power CT3: " + String(ActivePowerCT3) + " W \t" + ActiveFlag);
+      Serial.println("Active Power CT3: " + String(ActivePowerCT3) + " W \t" + ActiveFlag);
 #endif
 #if ATM90DEVICE == ATM90E36_DEVICE
-  Serial.println("Active Power CT3: " + String(ActivePowerCT3) + " kW \t" + ActiveFlag);
+    Serial.println("Active Power CT3: " + String(ActivePowerCT3) + " kW \t" + ActiveFlag);
 #endif
 
-  // Total Active Power C@T
-  TotalActivePower = NoiseFilterSquelch(eic.GetTotalActivePower(), 0.2);
-  ActiveFlag = "";
+    // Total Active Power C@T
+    TotalActivePower = NoiseFilterSquelch(eic.GetTotalActivePower(), 0.2);
+    ActiveFlag = "";
 
-  TotalActivePowerImport = ((TotalActivePower > 0) ? TotalActivePower : 0);
-  TotalActivePowerExport = ((TotalActivePower < 0) ? -TotalActivePower : 0);
-  ActiveFlag = ((TotalActivePower > 0) ? "(Import)" : ((TotalActivePower < 0) ? "(Export)" : "(ZERO)"));
+    TotalActivePowerImport = ((TotalActivePower > 0) ? TotalActivePower : 0);
+    TotalActivePowerExport = ((TotalActivePower < 0) ? -TotalActivePower : 0);
+    ActiveFlag = ((TotalActivePower > 0) ? "(Import)" : ((TotalActivePower < 0) ? "(Export)" : "(ZERO)"));
 
-  CalculatedTotalActivePower = (ActivePowerCT1 + ActivePowerCT2 + ActivePowerCT3);
+    CalculatedTotalActivePower = (ActivePowerCT1 + ActivePowerCT2 + ActivePowerCT3);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
+    if (DisplayFull == true) // Display Expanded Information
+    {
 
 #if ATM90DEVICE == ATM90E32_DEVICE
-    PrintSeparator("Total Active Power: " + String(TotalActivePower) + " W \t" + ActiveFlag);
+      PrintSeparator("Total Active Power: " + String(TotalActivePower) + " W \t" + ActiveFlag);
 #endif
 #if ATM90DEVICE == ATM90E36_DEVICE
-    PrintSeparator("Total Active Power: " + String(TotalActivePower) + " kW \t" + ActiveFlag);
+      PrintSeparator("Total Active Power: " + String(TotalActivePower) + " kW \t" + ActiveFlag);
 #endif
 
-    PrintSeparator("Calculated Total Active Power: " + String(CalculatedTotalActivePower) + " W (CT1~CT2~CT3)");
-    Serial.println("");
-  }
+      PrintSeparator("Calculated Total Active Power: " + String(CalculatedTotalActivePower) + " W (CT1~CT2~CT3)");
+      Serial.println("");
+    }
 
-  // Re-Active Power
-  ReactivePowerCT1 = NoiseFilterSquelch(eic.GetReactivePowerCT1());
-  ReactivePowerCT2 = NoiseFilterSquelch(eic.GetReactivePowerCT2());
-  ReactivePowerCT3 = NoiseFilterSquelch(eic.GetReactivePowerCT3());
-  TotalReactivePower = NoiseFilterSquelch(eic.GetTotalReactivePower());
-  CalculatedTotalReactivePower = (ReactivePowerCT1 + ReactivePowerCT2 + ReactivePowerCT3);
+    // Re-Active Power
+    ReactivePowerCT1 = NoiseFilterSquelch(eic.GetReactivePowerCT1());
+    ReactivePowerCT2 = NoiseFilterSquelch(eic.GetReactivePowerCT2());
+    ReactivePowerCT3 = NoiseFilterSquelch(eic.GetReactivePowerCT3());
+    TotalReactivePower = NoiseFilterSquelch(eic.GetTotalReactivePower());
+    CalculatedTotalReactivePower = (ReactivePowerCT1 + ReactivePowerCT2 + ReactivePowerCT3);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Re-Active Power");
-    Serial.println("ReActive Power CT1: " + String(ReactivePowerCT1) + " VAR");
-    Serial.println("ReActive Power CT2: " + String(ReactivePowerCT2) + " VAR");
-    Serial.println("ReActive Power CT3: " + String(ReactivePowerCT3) + " VAR");
-    PrintSeparator("Total ReActive Power: " + String(TotalReactivePower) + " VAR (CT1~CT2~CT3)");
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Re-Active Power");
+      Serial.println("ReActive Power CT1: " + String(ReactivePowerCT1) + " VAR");
+      Serial.println("ReActive Power CT2: " + String(ReactivePowerCT2) + " VAR");
+      Serial.println("ReActive Power CT3: " + String(ReactivePowerCT3) + " VAR");
+      PrintSeparator("Total ReActive Power: " + String(TotalReactivePower) + " VAR (CT1~CT2~CT3)");
 
-    PrintSeparator("Calculated Total Reactive Power: " + String(CalculatedTotalReactivePower) + " W (CT1~CT2~CT3)");
-    Serial.println("");
-  }
+      PrintSeparator("Calculated Total Reactive Power: " + String(CalculatedTotalReactivePower) + " W (CT1~CT2~CT3)");
+      Serial.println("");
+    }
 
-  // Apparent Power Flowing - Voltage and Current (V * I)
-  ApparentPowerCT1 = NoiseFilterSquelch(eic.GetApparentPowerCT1());
-  ApparentPowerCT2 = NoiseFilterSquelch(eic.GetApparentPowerCT2());
-  ApparentPowerCT3 = NoiseFilterSquelch(eic.GetApparentPowerCT3());
-  TotalApparentPower = NoiseFilterSquelch(eic.GetTotalApparentPower());
-  CalculatedTotalApparentPower = (ApparentPowerCT1 + ApparentPowerCT2 + ApparentPowerCT3);
+    // Apparent Power Flowing - Voltage and Current (V * I)
+    ApparentPowerCT1 = NoiseFilterSquelch(eic.GetApparentPowerCT1());
+    ApparentPowerCT2 = NoiseFilterSquelch(eic.GetApparentPowerCT2());
+    ApparentPowerCT3 = NoiseFilterSquelch(eic.GetApparentPowerCT3());
+    TotalApparentPower = NoiseFilterSquelch(eic.GetTotalApparentPower());
+    CalculatedTotalApparentPower = (ApparentPowerCT1 + ApparentPowerCT2 + ApparentPowerCT3);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Apparent Power (Total Amount of Power Flowing from Source to Load)");
-    Serial.println("Apparent Power CT1: " + String(ApparentPowerCT1) + " VA");
-    Serial.println("Apparent Power CT2: " + String(ApparentPowerCT2) + " VA");
-    Serial.println("Apparent Power CT3: " + String(ApparentPowerCT3) + " VA");
-    PrintSeparator("Total Apparent Power: " + String(TotalApparentPower) + " VA (CT1~CT2~CT3)");
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Apparent Power (Total Amount of Power Flowing from Source to Load)");
+      Serial.println("Apparent Power CT1: " + String(ApparentPowerCT1) + " VA");
+      Serial.println("Apparent Power CT2: " + String(ApparentPowerCT2) + " VA");
+      Serial.println("Apparent Power CT3: " + String(ApparentPowerCT3) + " VA");
+      PrintSeparator("Total Apparent Power: " + String(TotalApparentPower) + " VA (CT1~CT2~CT3)");
 
-    PrintSeparator("Calculated Total Apparent Power: " + String(CalculatedTotalApparentPower) + " VA (CT1~CT2~CT3)");
-    Serial.println("\n");
-  }
+      PrintSeparator("Calculated Total Apparent Power: " + String(CalculatedTotalApparentPower) + " VA (CT1~CT2~CT3)");
+      Serial.println("\n");
+    }
 
 #if ATM90DEVICE == ATM90E32_DEVICE
-  if (DisplayFull == true) // Display Expanded Information
-    PrintUnderline("Other Power Information");
+    if (DisplayFull == true) // Display Expanded Information
+      PrintUnderline("Other Power Information");
 
-  // Total Fundamental Power
-  TotalActiveFundPower = NoiseFilterSquelch(eic.GetTotalActiveFundPower());
-  if (DisplayFull == true) // Display Expanded Information
-    Serial.println("Total Fundamental Power: " + String(TotalActiveFundPower) + " pH(t)\n");
+    // Total Fundamental Power
+    TotalActiveFundPower = NoiseFilterSquelch(eic.GetTotalActiveFundPower());
+    if (DisplayFull == true) // Display Expanded Information
+      Serial.println("Total Fundamental Power: " + String(TotalActiveFundPower) + " pH(t)\n");
 
-  // Total Harmonic Power
-  TotalActiveHarPower = NoiseFilterSquelch(eic.GetTotalActiveHarPower());
-  if (DisplayFull == true) // Display Expanded Information
-    Serial.println("Total Harmonic Power: " + String(TotalActiveHarPower) + " ");
+    // Total Harmonic Power
+    TotalActiveHarPower = NoiseFilterSquelch(eic.GetTotalActiveHarPower());
+    if (DisplayFull == true) // Display Expanded Information
+      Serial.println("Total Harmonic Power: " + String(TotalActiveHarPower) + " ");
 
 #endif
 
-  if (DisplayFull == true)
+    if (DisplayFull == true)
 
-    // **************** OTHER ****************
+      // **************** OTHER ****************
 
-    // Power Factor
-    PowerFactorCT1 = NoiseFilterSquelch(eic.GetPowerFactorCT1(), 0.01, false);
-  PowerFactorCT2 = NoiseFilterSquelch(eic.GetPowerFactorCT2(), 0.01, false);
-  PowerFactorCT3 = NoiseFilterSquelch(eic.GetPowerFactorCT3(), 0.01, false);
-  TotalPowerFactor = NoiseFilterSquelch(eic.GetTotalPowerFactor(), 0, false);
+      // Power Factor
+      PowerFactorCT1 = NoiseFilterSquelch(eic.GetPowerFactorCT1(), 0.01, false);
+    PowerFactorCT2 = NoiseFilterSquelch(eic.GetPowerFactorCT2(), 0.01, false);
+    PowerFactorCT3 = NoiseFilterSquelch(eic.GetPowerFactorCT3(), 0.01, false);
+    TotalPowerFactor = NoiseFilterSquelch(eic.GetTotalPowerFactor(), 0, false);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Power Factor");
-    Serial.println("Power Factor CT1: " + String(PowerFactorCT1) + " PF");
-    Serial.println("Power Factor CT2: " + String(PowerFactorCT2) + " PF");
-    Serial.println("Power Factor CT3: " + String(PowerFactorCT3) + " PF");
-    PrintSeparator("Total Power Factor: " + String(TotalPowerFactor) + " PF");
-    Serial.println("");
-  }
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Power Factor");
+      Serial.println("Power Factor CT1: " + String(PowerFactorCT1) + " PF");
+      Serial.println("Power Factor CT2: " + String(PowerFactorCT2) + " PF");
+      Serial.println("Power Factor CT3: " + String(PowerFactorCT3) + " PF");
+      PrintSeparator("Total Power Factor: " + String(TotalPowerFactor) + " PF");
+      Serial.println("");
+    }
 
-  // Phase Angle
-  PhaseAngleCT1 = NoiseFilterSquelch(eic.GetPhaseCT1(), 0, true, 180);
-  PhaseAngleCT2 = NoiseFilterSquelch(eic.GetPhaseCT2(), 0, true, 180);
-  PhaseAngleCT3 = NoiseFilterSquelch(eic.GetPhaseCT3(), 0, true, 180);
+    // Phase Angle
+    PhaseAngleCT1 = NoiseFilterSquelch(eic.GetPhaseCT1(), 0, true, 180);
+    PhaseAngleCT2 = NoiseFilterSquelch(eic.GetPhaseCT2(), 0, true, 180);
+    PhaseAngleCT3 = NoiseFilterSquelch(eic.GetPhaseCT3(), 0, true, 180);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Phase Angle");
-    Serial.println("Phase Angle CT1: " + String(PhaseAngleCT1));
-    Serial.println("Phase Angle CT2: " + String(PhaseAngleCT2));
-    Serial.println("Phase Angle CT3: " + String(PhaseAngleCT3));
-    Serial.println("");
-  }
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Phase Angle");
+      Serial.println("Phase Angle CT1: " + String(PhaseAngleCT1));
+      Serial.println("Phase Angle CT2: " + String(PhaseAngleCT2));
+      Serial.println("Phase Angle CT3: " + String(PhaseAngleCT3));
+      Serial.println("");
+    }
 
 #if ATM90DEVICE == ATM90E36_DEVICE
-  // Voltage Harmonics
-  VoltageHarmonicsCT1 = NoiseFilterSquelch(eic.GetVHarmCT1(), 0, true, 180);
-  VoltageHarmonicsCT2 = NoiseFilterSquelch(eic.GetVHarmCT2(), 0, true, 180);
-  VoltageHarmonicsCT3 = NoiseFilterSquelch(eic.GetVHarmCT3(), 0, true, 180);
+    // Voltage Harmonics
+    VoltageHarmonicsCT1 = NoiseFilterSquelch(eic.GetVHarmCT1(), 0, true, 180);
+    VoltageHarmonicsCT2 = NoiseFilterSquelch(eic.GetVHarmCT2(), 0, true, 180);
+    VoltageHarmonicsCT3 = NoiseFilterSquelch(eic.GetVHarmCT3(), 0, true, 180);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Voltage Harmonics");
-    Serial.println("Voltage Harmonics CT1: " + String(VoltageHarmonicsCT1));
-    Serial.println("Voltage Harmonics CT2: " + String(VoltageHarmonicsCT2));
-    Serial.println("Voltage Harmonics CT3: " + String(VoltageHarmonicsCT3));
-    Serial.println("");
-  }
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Voltage Harmonics");
+      Serial.println("Voltage Harmonics CT1: " + String(VoltageHarmonicsCT1));
+      Serial.println("Voltage Harmonics CT2: " + String(VoltageHarmonicsCT2));
+      Serial.println("Voltage Harmonics CT3: " + String(VoltageHarmonicsCT3));
+      Serial.println("");
+    }
 
-  // Current Harmonics
-  CurrentHarmonicsCT1 = NoiseFilterSquelch(eic.GetCHarmCT1(), 0, true, 180);
-  CurrentHarmonicsCT2 = NoiseFilterSquelch(eic.GetCHarmCT2(), 0, true, 180);
-  CurrentHarmonicsCT3 = NoiseFilterSquelch(eic.GetCHarmCT3(), 0, true, 180);
+    // Current Harmonics
+    CurrentHarmonicsCT1 = NoiseFilterSquelch(eic.GetCHarmCT1(), 0, true, 180);
+    CurrentHarmonicsCT2 = NoiseFilterSquelch(eic.GetCHarmCT2(), 0, true, 180);
+    CurrentHarmonicsCT3 = NoiseFilterSquelch(eic.GetCHarmCT3(), 0, true, 180);
 
-  if (DisplayFull == true) // Display Expanded Information
-  {
-    PrintUnderline("Current Harmonics");
-    Serial.println("Current Harmonics CT1: " + String(CurrentHarmonicsCT1));
-    Serial.println("Current Harmonics CT2: " + String(CurrentHarmonicsCT2));
-    Serial.println("Current Harmonics CT3: " + String(CurrentHarmonicsCT3));
-    Serial.println("");
-  }
+    if (DisplayFull == true) // Display Expanded Information
+    {
+      PrintUnderline("Current Harmonics");
+      Serial.println("Current Harmonics CT1: " + String(CurrentHarmonicsCT1));
+      Serial.println("Current Harmonics CT2: " + String(CurrentHarmonicsCT2));
+      Serial.println("Current Harmonics CT3: " + String(CurrentHarmonicsCT3));
+      Serial.println("");
+    }
 #endif
+  }
+
+  Serial.println("");
 
   if (DisplayFull == true) // Display Expanded Information
     PrintUnderline("Other Information");
@@ -494,7 +501,7 @@ void setup()
 
   // Display ATM Specific Registers
   // eic.GetRegisters();
-  
+
   // DisplayRegisters(false);
 } // Setup
 
