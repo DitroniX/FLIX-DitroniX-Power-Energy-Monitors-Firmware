@@ -2,9 +2,9 @@
 
 Development Test and Bring-up Code - WORK-IN-PROGRESS 
 
-Updated 15th June 2025
+Updated June 2026 for IPEM Plus and IPEM NB-IoT
 
-Dave Williams, DitroniX 2019-2025 (ditronix.net)
+Dave Williams, DitroniX 2019-2026 (ditronix.net)
 
 ## **FLiX Development Code Variants:**
 
